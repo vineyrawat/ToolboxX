@@ -1,6 +1,6 @@
 import math
 
-def check_user_access(latitude_user, longitude_user, latitude_website, longitude_website, radius_limit):
+def is_user_within_range(latitude_user, longitude_user, latitude_website, longitude_website, radius_limit):
     # Calculate the distance between user and website coordinates using the Haversine formula
     R = 6371  # Earth radius in kilometers
 
@@ -32,7 +32,7 @@ def test():
     longitude_website = 77.346834  # Longitude of the website
 
 
-    can_access = check_user_access(latitude_user, longitude_user, latitude_website, longitude_website, 1000)
+    can_access = is_user_within_range(latitude_user, longitude_user, latitude_website, longitude_website, 1000)
     if can_access:
         print("User can access the website.")
     else:
